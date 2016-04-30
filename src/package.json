@@ -1,0 +1,15 @@
+{
+  "name": "contact-me-later",
+  "version": "1.0.0",
+  "description": "Remember to contact a persn",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "resume",
+    "agenda"
+  ],
+  "author": "Joao Pereira",
+  "license": "MIT"
+}
