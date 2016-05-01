@@ -1,9 +1,14 @@
-var Datastore = require('nedb');
-
+var Datastore = require('nedb')
 angular
     .module('Db', [])
     .service('Storage', ['$q', function($q) {
-      this.db = new Datastore({ filename: 'path/to/datafile', autoload: true });
+      this.db = new Datastore({ filename: './app.db', autoload: true });
+
+      this.init = function() {
+        var d = $q.defer();
+        d.resolve(this);
+        return d.promise();
+      }
 
       this.insert = function(data) {
         var d = $q.defer();

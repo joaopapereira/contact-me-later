@@ -1,9 +1,10 @@
 
 angular
     .module('MainView', ['Db'])
-    .controller('MainCtrl', function() {
+    .controller('MainCtrl', ['Storage', '$scope', function(Storage, scope) {
         var vm = this;
-        Storage.then(function (db) {
+        Storage.init()
+          .then(function (db) {
             vm.contacts = db.find_all();
 
             remoteIpc.on('update-main-view', function() {
@@ -14,4 +15,4 @@ angular
                     });
             });
         });
-    });
+    }]);
