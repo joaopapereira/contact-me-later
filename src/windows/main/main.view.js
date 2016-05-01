@@ -1,6 +1,9 @@
 
+var remote = require('remote'),
+    remoteIpc = remote.require('electron').ipcMain;
+
 angular
-    .module('MainView', ['Db'])
+    .module('MainView', ['Db', 'Utils'])
     .controller('MainCtrl', ['Storage', '$scope', function(Storage, scope) {
         var vm = this;
         Storage.init()

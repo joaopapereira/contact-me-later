@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Contact later</title>
+    <link src="../../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+        <script src="../../bower_components/nedb/browser-version/out/nedb.js"></script>
+    <script src="../../bower_components/angular/angular.js"></script>
+
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+
+
+    <script src="../../db/db.js"></script>
+    <script src="./add_contact.view.js"></script>
+</head>
+<body>
+  <div class="insert" ng-controller="AddContactCtrl as vm">
+    <form>
+      <div class="row">
+        <label>Job Name</label>
+        <input type="text" />
+      </div>
+      <div class="row">
+        <label>Recruter name</label>
+        <input type="text" />
+      </div>
+      <div class="row">
+        <label>Link of job description</label>
+        <input type="text" />
+      </div>
+      <div class="">
+          <button toggle-insert-view class="btn btn-danger">cancel</button>
+          <button save-contact class="btn btn-primary"
+                  ng-disabled="insertForm.$invalid">save</button>
+      </div>
+    </form>
+  </div>
+  <script>
+      angular
+          .element(document)
+          .ready(function() {
+              angular.bootstrap(document.body, ['AddContactView']);
+          });
+  </script>
+</body>
+</html>

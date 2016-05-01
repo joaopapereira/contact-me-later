@@ -1,21 +1,22 @@
 var app = require('app'),
-BrowserWindow = require('browser-window'),
-ipc = require("electron").ipcMain;
+    BrowserWindow = require('browser-window'),
+    ipc = require("electron").ipcMain;
 
-var mainWindow = null;
+var mainWindow = null,
+    addContactWindow = null;
 
 
-function createInsertWindow() {
-    insertWindow = new BrowserWindow({
+function createaddContactWindow() {
+    addContactWindow = new BrowserWindow({
         width: 640,
         height: 480,
         show: false
     });
 
-    insertWindow.loadURL('file://' + __dirname + '/windows/insert/insert.html');
+    addContactWindow.loadURL('file://' + __dirname + '/windows/add_contact/add_contact.html');
 
-    insertWindow.on('closed',function() {
-        insertWindow = null;
+    addContactWindow.on('closed',function() {
+        addContactWindow = null;
     });
 }
 
@@ -28,10 +29,10 @@ app.on('ready', function() {
     mainWindow.loadURL('file://' + __dirname + '/windows/main/main.html');
     mainWindow.openDevTools();
 
-    ipc.on('toggle-insert-view', function() {
-        if(!insertWindow) {
-            createInsertWindow();
+    ipc.on('toggle-add-view', function() {
+        if(addContactWindow === null) {
+            createaddContactWindow();
         }
-        return (!insertWindow.isClosed() && insertWindow.isVisible()) ? insertWindow.hide() : insertWindow.show();
+        return addContactWindow.show();
     });
 });

@@ -7,8 +7,8 @@ angular
       this.init = function() {
         var d = $q.defer();
         d.resolve(this);
-        return d.promise();
-      }
+        return d.promise;
+      };
 
       this.insert = function(data) {
         var d = $q.defer();
@@ -20,6 +20,7 @@ angular
         return d.promise;
       }
       this.find = function(query) {
+        var d = $q.defer();
         this.db.find(query, function (err, docs) {
           // docs is an array containing documents Mars, Earth, Jupiter
           // If no document is found, docs is equal to []

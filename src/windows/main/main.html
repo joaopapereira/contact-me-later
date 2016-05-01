@@ -10,7 +10,7 @@
 
     <script src="../../bower_components/jquery/dist/jquery.js"></script>
 
-
+    <script src="../../common/utils.js"></script>
     <script src="../../db/db.js"></script>
     <script src="./main.view.js"></script>
 </head>
@@ -42,7 +42,9 @@
             </tbody>
         </table>
     </div>
-
+    <button toggle-add-view class="btn btn-primary">
+        <i class="material-icons">Add connection</i>
+    </button>
     <script>
         angular
             .element(document)
