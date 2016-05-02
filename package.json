@@ -1,11 +1,11 @@
 {
-  "name": "new",
+  "name": "contact-me-later",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "postinstall": "npm run typings install",
     "typings": "typings",
