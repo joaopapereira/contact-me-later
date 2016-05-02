@@ -1,0 +1,33 @@
+<div *ngIf="contact">
+  <h2>{{contact.job_description}} details!</h2>
+  <form *ngIf="active" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <input type="hidden" [(ngModel)]="contact._id" ngControl="_id" #_id="ngForm">
+    <div class="form-group">
+        <label for="job_description">Job Description</label>
+        <input type="text" class="form-control" required
+                [(ngModel)]="contact.job_description" 
+                placeholder="Job Description" 
+                ngControl="job_description" #job_description="ngForm" />
+        <div [hidden]="job_description.valid || job_description.pristine" class="alert alert-danger">
+            Job Description is required
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="job_url">Job Url</label>
+        <input type="text" class="form-control"
+                [(ngModel)]="contact.job_url" 
+                placeholder="Job Description" 
+                ngControl="job_url" #job_url="ngForm" />
+    </div>
+    <div class="form-group">
+        <label for="recruter">Recruter name</label>
+        <input type="text" class="form-control"
+                [(ngModel)]="contact.recruter" 
+                placeholder="Recruter name" 
+                ngControl="recruter" #recruter="ngForm" />
+    </div>
+    <button type="submit" class="btn btn-default" [disabled]="!contactForm.form.valid">Save</button>
+  </form>
+  <button (click)="goBack()">Back</button>
+</div>

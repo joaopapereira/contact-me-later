@@ -1,24 +1,41 @@
 {
-  "name": "contact-me-later",
+  "name": "new",
   "version": "1.0.0",
-  "description": "Remember to contact a persn",
-  "main": "src/app.js",
+  "description": "",
+  "main": "gulpfile.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "scripts": {
-    "start": "electron ./src",
-    "dist": "gulp electron"
+    "postinstall": "npm run typings install",
+    "typings": "typings",
+    "tsc": "tsc",
+    "build": "npm run frontend && tsc && gulp electron",
+    "frontend": "gulp frontend && tsc",
+    "serve": "live-server dist/frontend/",
+    "apps": "npm run build && gulp apps"
   },
-  "keywords": [
-    "resume",
-    "agenda"
-  ],
-  "author": "Joao Pereira",
-  "license": "MIT",
+  "dependencies": {
+    "angular2": "2.0.0-beta.17",
+    "bootstrap": "^4.0.0-alpha.2",
+    "es6-promise": "^3.1.2",
+    "es6-shim": "^0.35.0",
+    "nedb": "^1.6.0",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.27",
+    "zone.js": "0.6.12"
+  },
   "devDependencies": {
-    "asar": "^0.11.0",
+    "del": "^2.2.0",
     "electron-prebuilt": "^0.37.8",
-    "fs-jetpack": "^0.8.0",
-    "gulp": "^3.9.0",
-    "gulp-electron": "0.0.9",
-    "rcedit": "^0.5.0"
+    "gulp": "^3.9.1",
+    "gulp-atom-electron": "^1.6.1",
+    "gulp-symdest": "^1.0.0",
+    "live-server": "^1.0.0",
+    "retyped-nedb-tsd-ambient": "0.0.0-0",
+    "run-sequence": "^1.1.5",
+    "typescript": "^1.8.10",
+    "typings": "^0.8.1"
   }
 }

@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+<h2>My contacts</h2>
+<button (click)="createContact()">Add new contact</button>
+
+<div class="row">
+    <div *ngFor="let contact of contacts" (click)="editContact(contact)">
+        <div>
+            {{contact.job_description}}
+        </div>
+        <div>
+            {{contact.job_url}}
+        </div>
+        <div>
+            {{contact.recruter}}
+        </div>
+        <div>
+            {{contact.last_contact}}
+        </div>
+    </div>
+</div>
