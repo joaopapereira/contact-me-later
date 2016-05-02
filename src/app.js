@@ -14,11 +14,19 @@ function createaddContactWindow() {
     });
 
     addContactWindow.loadURL('file://' + __dirname + '/windows/add_contact/add_contact.html');
+    mainWindow.openDevTools();
 
     addContactWindow.on('closed',function() {
         addContactWindow = null;
     });
 }
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function () {
+  if (process.platform != 'darwin') {
+    app.quit();
+  }
+});
 
 app.on('ready', function() {
     mainWindow = new BrowserWindow({
@@ -33,6 +41,10 @@ app.on('ready', function() {
         if(addContactWindow === null) {
             createaddContactWindow();
         }
-        return addContactWindow.show();
+        console.log("test");
+        if(addContactWindow !== null && addContactWindow.isVisible())
+          return addContactWindow.hide();
+        else if(addContactWindow !== null)
+          return addContactWindow.show();
     });
 });

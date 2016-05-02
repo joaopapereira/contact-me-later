@@ -15,11 +15,13 @@ angular
         return function(scope, el) {
             el.bind('click', function(e) {
                 e.preventDefault();
+                console.log("testing");
 
                 if(scope.vm.formData) {
                     Storage
-                        .addDoc(scope.vm.formData)
+                        .insert(scope.vm.formData)
                         .then(function() {
+                          console.log("done insert")
                             // refresh list in main view
                            ipc.send('update-main-view');
                            // reset form & close insert window
