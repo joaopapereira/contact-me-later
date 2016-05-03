@@ -23,13 +23,13 @@ gulp.task('copy:vendor', function(){
         ])
         .pipe(gulp.dest('./dist/frontend/scripts/vendor'))
     return result + gulp.src([
-            "node_modules/nedb/index.js"
+            "node_modules/nedb/browser-version/out/nedb.js"
         ])
-        .pipe(gulp.dest('./dist/frontend/scripts/vendor/nedb')) + 
+        .pipe(gulp.dest('./dist/frontend/scripts/vendor')) + 
         gulp.src([
-            "node_modules/nedb/index.js"
+            "node_modules/nedb/browser-version/out/nedb.js"
         ])
-        .pipe(gulp.dest('./dist/electron-package/scripts/vendor/nedb')) + 
+        .pipe(gulp.dest('./dist/electron-package/scripts/vendor')) + 
         gulp.src([
             "node_modules/bootstrap/dist/css/bootstrap.min.css"
         ])
