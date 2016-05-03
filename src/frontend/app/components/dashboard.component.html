@@ -1,20 +1,35 @@
-<h1>{{title}}</h1>
 <h2>My contacts</h2>
-<button (click)="createContact()">Add new contact</button>
+<button (click)="createContact()" class="btn btn-primary">Add new contact</button>
 
-<div class="row">
-    <div *ngFor="let contact of contacts" (click)="editContact(contact)">
-        <div>
-            {{contact.job_description}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            Job description
         </div>
-        <div>
-            {{contact.job_url}}
+        <div class="col-md-3">
+            Job URL
         </div>
-        <div>
-            {{contact.recruter}}
+        <div class="col-md-3">
+            Recruter name
         </div>
-        <div>
-            {{contact.last_contact}}
+        <div class="col-md-3">
+            Last contact
         </div>
-    </div>
+     </div>
+    <div class="row">
+        <div *ngFor="let contact of contacts" (click)="editContact(contact)">
+            <div class="col-md-3">
+                {{contact.job_description}}
+            </div>
+            <div class="col-md-3">
+                {{contact.job_url}}
+            </div>
+            <div class="col-md-3">
+                {{contact.recruter}}
+            </div>
+            <div class="col-md-3">
+                {{contact.last_contact}}
+            </div>
+        </div>
+     </div>
 </div>

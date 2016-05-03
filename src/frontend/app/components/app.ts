@@ -9,12 +9,7 @@ import {ContactDetailComponent} from './contact_detail.component';
 
 @Component({
   selector: 'ng2-electron-app',
-  template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a [routerLink]="['Dashboard']">Dashboard</a>
-    </nav>
-    <router-outlet></router-outlet>`,
+  templateUrl: './app/components/app.component.html',
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ContactService]

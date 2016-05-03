@@ -38,6 +38,8 @@ gulp.task('copy:vendor', function(){
 
 gulp.task('copy:index', function(){  
     return gulp.src('./src/frontend/**/*.html')
+        .pipe(gulp.dest('./dist/frontend')) +
+        gulp.src('./src/frontend/**/*.css')
         .pipe(gulp.dest('./dist/frontend'));
 });
 
