@@ -19,13 +19,11 @@ gulp.task('copy:vendor', function(){
             "node_modules/systemjs/dist/system.src.js",
             "node_modules/rxjs/bundles/Rx.js",
             "node_modules/angular2/bundles/angular2.dev.js",
-            "node_modules/angular2/bundles/router.dev.js"
-        ])
-        .pipe(gulp.dest('./dist/frontend/scripts/vendor'))
-    return result + gulp.src([
+            "node_modules/angular2/bundles/router.dev.js",
             "node_modules/nedb/browser-version/out/nedb.js"
         ])
-        .pipe(gulp.dest('./dist/frontend/scripts/vendor')) + 
+        .pipe(gulp.dest('./dist/frontend/scripts/vendor'))
+    return result + 
         gulp.src([
             "node_modules/nedb/browser-version/out/nedb.js"
         ])
