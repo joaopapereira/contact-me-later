@@ -27,7 +27,7 @@ gulp.task('copy:vendor', function(){
         gulp.src([
             "node_modules/nedb/browser-version/out/nedb.js"
         ])
-        .pipe(gulp.dest('./dist/electron-package/scripts/vendor')) + 
+        .pipe(gulp.dest('./dist/electron-package')) + 
         gulp.src([
             "node_modules/bootstrap/dist/css/bootstrap.min.css"
         ])
@@ -101,5 +101,6 @@ gulp.task('start', function () {
 }); 
 
 gulp.task('run', function(done){  
-    return runSeq('electron',['start'] , done);
+    
+    return runSeq('start',[] , done);
 });

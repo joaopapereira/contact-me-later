@@ -1,6 +1,7 @@
-
+/// <reference path="../../../../typings/browser.d.ts" />
 import {Injectable} from 'angular2/core';
-import NeDBDataStore = require('nedb');
+import Datastore = require('nedb');
+//import {NeDBDataStore} from 'nedb';
 import {Contact} from './contact.model';
 
 let contacts = new Array<Contact>();
@@ -12,7 +13,7 @@ contacts[1]._id = 1;
 contacts[1].job_description = "Description 2";
 @Injectable()
 export class ContactService {
-    db = new NeDBDataStore({ filename: './app.db', autoload: true });
+    db = new Datastore({ filename: './app.db', autoload: true });
     contacts: Contact[];
     constructor() { }
     getContacts() {

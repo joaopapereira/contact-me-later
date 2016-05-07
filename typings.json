@@ -1,6 +1,11 @@
 {
+  "name": "debug",
+  "main": "node.d.ts",
+  "browser": "browser.d.ts",
+  "dependencies": {
+    "ms": "github:typed-typings/npm-ms#f40c81c7f45bc35e970de851117c29fc959220b2"
+  },
   "ambientDependencies": {
-    "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2",
-    "nedb": "github:DefinitelyTyped/DefinitelyTyped/nedb/nedb.d.ts#7de6c3d"
+    "es6-shim": "github:DefinitelyTyped/DefinitelyTyped/es6-shim/es6-shim.d.ts#6697d6f7dadbf5773cb40ecda35a76027e0783b2"
   }
 }
